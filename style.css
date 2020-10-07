@@ -1,0 +1,56 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 70%;
+  margin: 50px auto;
+}
+
+.header h1 {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  border: 40px solid red;
+  box-sizing: content-box;
+  margin: 0 auto;
+}
+
+.grid-cell {
+  background-color: rgb(243, 243, 243);
+  border: 1px solid #999;
+}
+
+.grid-cell--marked {
+  background-color: #000;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.clear-btn {
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 2em;
+  font-family: inherit;
+  font-weight: bold;
+  color: brown;
+}
