@@ -16,26 +16,20 @@ export class UI {
     this.chosenEffect = UI.EFFECTS.SWITCH;
   }
 
-  createGrid(initialGridSideLength, initialGridSize) {
-    this.createGridCSSText(initialGridSideLength, initialGridSize);
-    this.createGridElements(initialGridSideLength);
+  createGrid(gridSideLength, gridSize) {
+    this.createGridCSSText(gridSideLength, gridSize);
+    this.createGridElements(gridSideLength);
   }
 
-  createGridCSSText(initialGridSideLength, initialGridSize) {
-    const calculateCellSize = function (gridSideLength, gridSize) {
-      return Math.round(gridSize / gridSideLength);
-    };
-    const cellSize = calculateCellSize(initialGridSideLength, initialGridSize);
-    const gridSize = initialGridSideLength * cellSize;
+  createGridCSSText(gridSideLength, gridSize) {
     const cssText = `height: ${gridSize}px;
                   width: ${gridSize}px;
-                  grid-template-columns: repeat(${initialGridSideLength}, ${cellSize}px);
-                  grid-template-rows: repeat(${initialGridSideLength}, ${cellSize}px);`;
+                  grid-template-columns: repeat(${gridSideLength}, 1fr);
+                  grid-template-rows: repeat(${gridSideLength}, 1fr);`;
     this.grid.style.cssText = cssText;
   }
 
   createGridElements(gridSideLength) {
-    const { chosenEffect } = this;
     const changeCellColoring = ({ target: { style, classList } }) => {
       if (this.chosenEffect === UI.EFFECTS.SWITCH) {
         style.backgroundColor = "";
@@ -53,8 +47,6 @@ export class UI {
         cell.setAttribute("class", "grid-cell");
         cell.setAttribute("data-row", row);
         cell.setAttribute("data-column", column);
-        cell.style.gridRow = `${row + 1} / span 1`;
-        cell.style.gridColumn = `${column + 1} / span 1`;
         cell.addEventListener("mouseenter", changeCellColoring);
         gridFragment.appendChild(cell);
       }
