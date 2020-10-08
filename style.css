@@ -42,15 +42,27 @@ body {
   background-color: #000;
 }
 
-.buttons {
-  text-align: center;
+.controls {
+  display: flex;
+  justify-content: center;
 }
 
 .clear-btn {
-  background-color: #fff;
+  background-color: #8874f0;
   border-radius: 10px;
   font-size: 2em;
   font-family: inherit;
   font-weight: bold;
-  color: brown;
+  color: #fff;
+  padding: 0 15px;
+}
+
+.radio-btns {
+  border-radius: 10px;
+  font-family: inherit;
+  margin-left: 30px;
+}
+
+.radio-btns input {
+  cursor: pointer;
 }

@@ -18,8 +18,29 @@
       <section class="grid" id="grid"></section>
     </div>
     <div class="container">
-      <section class="buttons">
+      <section class="controls">
         <button class="clear-btn" id="clear-btn">Clear</button>
+        <fieldset class="radio-btns" id="radio-btns">
+          <div class="radio-group">
+            <input
+              type="radio"
+              name="enter-effect"
+              value="switch"
+              id="enter-effect-switch"
+              checked
+            />
+            <label for="enter-effect-switch">Switch to Black</label>
+          </div>
+          <div class="radio-group">
+            <input
+              type="radio"
+              name="enter-effect"
+              value="color"
+              id="enter-effect-color"
+            />
+            <label for="enter-effect-color">Random Color</label>
+          </div>
+        </fieldset>
       </section>
     </div>
     <script src="script.js" type="module"></script>
